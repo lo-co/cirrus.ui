@@ -15,13 +15,15 @@
             /* Link function used in the DDO returned below...*/
             var link = function (scope, e, attrs) {
                 
+                // If the field ``info`` is undefined, default the indicator to an info state.
                 if (scope.info === undefined){
                     scope.info = true;
                 }
                 
+                // The span contains the badge - this is what we will apply our background color to
                 var badge = e.find('span.badge');
                 
-                
+                // Update the indicator state when the value changes
                 scope.$watch('ival', function(){
                     var color = scope.info?'forestgreen':'red';
                     if (scope.ival){ 
