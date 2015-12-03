@@ -1,2 +1,3 @@
 # cirrus.ui
-Some UI elements for bootstrap that I may or may not reuse.
+
+This is a library of UI elements intended for use with (bootstrap)[http://getbootstrap.com].  
