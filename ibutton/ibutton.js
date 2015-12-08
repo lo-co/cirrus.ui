@@ -3,8 +3,8 @@
         /* .config('$routeProvider', function($routeProvider){
              $routeProvider.when('/ibutton')
          })*/
-        .directive('cirrusIbutton', [function () {
-            
+        .directive('cuiIbutton', [function () {
+
             var cStyle = '{"background-color":iVal? "green":"red"}';
 
             var template = '<button class="btn btn-block btn-default btn-sm" ng-style="" style="border-style:groove;padding-top:0px;padding-bottom:0px; padding-left:0px; padding-right: 0px;border-radius: 5px;background-color:#777; color:white; border-color:darkgrey;border-width:2px;font-weight: 500;text-transform:uppercase; text-align:left; font-size:100%;">' +
@@ -14,27 +14,36 @@
 
             /* Link function used in the DDO returned below...*/
             var link = function (scope, e, attrs) {
-                
+
+                var b = e.find('button');
+
                 // If the field ``info`` is undefined, default the indicator to an info state.
-                if (scope.info === undefined){
+                if (scope.info === undefined) {
                     scope.info = true;
                 }
-                
+
                 // The span contains the badge - this is what we will apply our background color to
                 var badge = e.find('span.badge');
-                
+
                 // Update the indicator state when the value changes
-                scope.$watch('ival', function(){
-                    var color = scope.info?'forestgreen':'red';
-                    if (scope.ival){ 
+                scope.$watch('ival', function () {
+                    var color = scope.info ? 'forestgreen' : 'red';
+                    if (scope.ival) {
                         badge.css('background-color', 'yellowgreen');
-                    }
-                    else{
+                    } else {
                         badge.css('background-color', color);
                     }
-                    
-                    
+
+
                 });
+
+                if (scope.evntFunc !== undefined) {
+                    e.on('click', function () {
+                        scope.evntFunc();
+                    });
+                }
+
+
 
             }
             return {
@@ -43,7 +52,8 @@
                 scope: {
                     ival: '=',
                     width: '=?',
-                    info: '=?'
+                    info: '=?',
+                    evntFunc: '&?'
                 },
                 template: template,
                 link: link
