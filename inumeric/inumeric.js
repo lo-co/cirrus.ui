@@ -8,7 +8,7 @@
                 transclude: true,
                 scope: {
                     width: '=?',
-                    type: '=?',
+                    dtype: '=?',
                     evntFunc: '&?'
                 },
                 transclude: true,
@@ -20,10 +20,14 @@
 
                     // Reference to the input element...
                     var iVal = e.find('input');
+                    var sElem = e.find('.input-group-addon');
+                    
+                    sElem.css("width", scope.width + "px");
 
+                    console.log(scope.dtype);
                     /* Type can be float or an integer. The default is float. */
-                    if (scope.type === undefined) {
-                        scope.type = "float";
+                    if (scope.dtype === undefined) {
+                        scope.dtype = "float";
                     }
 
                     /* Set the look based on whether the user specifies if the 
@@ -44,7 +48,7 @@
 
                         var disp = "";
 
-                        if (scope.type === "float") { // Handle floats
+                        if (scope.dtype === "float") { // Handle floats
 
                             mv = parseFloat(mv || 0);
 
@@ -63,6 +67,8 @@
 
                             if (mv !== 0 && abs(mv) > 10000) {
                                 disp = mv.toExponential(2);
+                            }else {
+                                disp = mv.toFixed(0);
                             }
 
                         }
@@ -77,9 +83,9 @@
                     }
 
                     /* Watch for changes in the view */
-                    scope.$watch('data', function () {
+                    iVal.on('blur', function () {
                         var num = 0;
-                        if (scope.type = "float") {
+                        if (scope.dtype = "float") {
                             num = parseFloat(scope.data);
                         } else {
                             num = parseInt(scope.data);
