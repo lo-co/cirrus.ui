@@ -32,6 +32,7 @@
                     // Set the width of the .input-group-addon
                     sElem.css("width", scope.width + "px");
                     
+                    // Attach the event function provided to a blur event 
                     inputElem.on('blur', function (event) {
                         if (scope.evntFunc !== undefined) {
                             console.log("event fired with function");
