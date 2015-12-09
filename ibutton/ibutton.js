@@ -3,7 +3,7 @@
         /* .config('$routeProvider', function($routeProvider){
              $routeProvider.when('/ibutton')
          })*/
-        .directive('cuiIbutton', [function () {
+        .directive('cuiButton', [function () {
 
             var cStyle = '{"background-color":iVal? "green":"red"}';
 

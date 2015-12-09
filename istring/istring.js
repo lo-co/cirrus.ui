@@ -29,10 +29,9 @@
 
                     console.log(inputElem);
 
+                    // Set the width of the .input-group-addon
                     sElem.css("width", scope.width + "px");
-
-
-                    //if (scope.evntFunc !== undefined) {
+                    
                     inputElem.on('blur', function (event) {
                         if (scope.evntFunc !== undefined) {
                             console.log("event fired with function");
@@ -41,7 +40,6 @@
                             console.log('event fired with no function');
                         }
                     });
-                    //}
 
                     // Reference to the input element...
                     var inputElem = e.find('input');
