@@ -20,30 +20,28 @@
                     // Reference to the input element...
                     var inputElem = e.find('input');
                     var sElem = e.find('.input-group-addon');
-                    
-                   // var pattern = /{u-z}:\\/;   
+
+                    // var pattern = /{u-z}:\\/;   
 
                     if (scope.width === undefined) {
                         scope.width = 40;
                     }
 
+                    console.log(inputElem);
 
                     sElem.css("width", scope.width + "px");
 
 
-                    if (scope.eventFunc !== undefined) {
-                        inputElem.on('blur', scope.eventFunc()
-                            /*function(event){
-                                                    if (scope.evntFunc !== undefined){
-                                                        console.log("event fired with function");
-                                                        scope.evntFunc();
-                                                    }
-                                                    else{
-                                                        console.log('event fired with no function');
-                                                    }
-                                                }*/
-                        );
-                    }
+                    //if (scope.evntFunc !== undefined) {
+                    inputElem.on('blur', function (event) {
+                        if (scope.evntFunc !== undefined) {
+                            console.log("event fired with function");
+                            scope.evntFunc();
+                        } else {
+                            console.log('event fired with no function');
+                        }
+                    });
+                    //}
 
                     // Reference to the input element...
                     var inputElem = e.find('input');
@@ -72,14 +70,14 @@
                     ngm.$render = function () {
                         scope.data = ngm.$viewValue;
                     }
-                    
+
                     /* Watch for changes in the view */
-                    scope.$watch('data', function(){
+                    scope.$watch('data', function () {
                         ngm.$setViewValue(scope.data);
                     });
 
                 }
             }
-    }]);
+            }]);
 
 })();
