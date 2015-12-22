@@ -33,15 +33,19 @@
              */
 
             var ntemplate = '<div class="input-group" style="margin-top:2px; border-width:0px;width:100%">' +
-                '<span class="input-group-addon" style = "width:16px;border-width:1px;padding:2px 3px 0px 3px; border:1px solid whitesmoke;"><span class="badge" style="border:1px inset grey;height:12px; width:12px;padding:0px;border-width: 1px; border-radius:0px; clear:both;display:inline-block" ></span></span>' +
+                '<span class="input-group-addon" ng-show="indicate" class="ng-hide" style="width:16px;border-width:1px;padding:2px 3px 0px 3px; border:1px solid whitesmoke;"><span class="badge" style="border:1px inset grey;height:12px; width:12px;padding:0px; border-width:1px; border-radius:0px; clear:both;display:inline-block" ></span></span>' +
                 '<button class="btn btn-block btn-default btn-sm" style="margin-left:0;padding:0px 5px;background-color:#777; color:white; text-transform:uppercase;border-radius:0px 5px 5px 0px;border-style:solid; border-color: whitesmoke;border-width:1px;" ng-transclude></button>' +
                 '</div>';
 
             /* Link function used in the DDO returned below...*/
             var link = function (scope, e, attrs) {
 
+                
+                /* This is an addon functionality so let's just make sure
+                 * that the intended functionality is intact.
+                 */
                 if (scope.indicate === undefined) {
-                    scope.indicate = false;
+                    scope.indicate = true;
                 }
 
                 var b = e.find('button');
