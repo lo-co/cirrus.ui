@@ -12,9 +12,9 @@
                     evntFunc: '&?'
                 },
                 transclude: true,
-                template: '<div class="input-group" style="margin-top:2px; border-width:0px;">' +
-                    '<span class="input-group-addon" style = "border-width:1px;width:40px"><ng-transclude></ng-transclude></span>' +
-                    '<input class="form-control"  style="padding-left:5px;"  ng-model="data">' +
+                template: '<div class="input-group inumeric">' +
+                    '<span class="input-group-addon"><ng-transclude></ng-transclude></span>' +
+                    '<input class="form-control"  ng-model="data">' +
                     '</div>',
                 link: function (scope, e, attrs, ngm) {
 
