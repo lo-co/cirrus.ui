@@ -1,0 +1,68 @@
+.ibutton {
+    color: white;
+    text-transform: uppercase;
+    margin-left: 0;
+    padding: 0px 5px;
+    background-color: #777;
+    border-radius: 0px 5px 5px 0px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+}
+
+.button-div {
+    margin-top: 2px;
+    border-width: 0px;
+    width: 100%;
+}
+
+.button-div > .input-group-addon {
+    width: 16px;
+    border-width: 1px;
+    padding: 2px 3px 0px 3px;
+    border: 1px solid whitesmoke;
+}
+
+.button-div .badge {
+    border: 1px inset grey;
+    height: 12px;
+    width: 12px;
+    padding: 0px;
+    border-width: 1px;
+    border-radius: 0px;
+    clear: both;
+    display: inline-block
+}
+
+.ibutton:hover {
+    background-color: #e0e0e0;
+    background-position: 0 -15px;
+    color: black;
+}
+
+.inumeric {
+    margin-top: 2px;
+    border-width: 0px;
+}
+
+.inumeric > .input-group-addon {
+    border-width: 1px;
+    width: 40px;
+}
+
+.inumeric > .form-control {
+    padding-left: 5px;
+}
+
+.istring {
+    margin-top: 2px;
+    border-width: 0px;
+}
+
+.istring > .input-group-addon {
+    border-width: 1px;
+}
+
+.istring > input{
+    padding-left:5px;
+}
