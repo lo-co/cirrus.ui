@@ -3,7 +3,7 @@
         .directive('cuiNumeric', [function () {
 
             return {
-                restric: 'E',
+                restrict: 'E',
                 require: "ngModel",
                 transclude: true,
                 scope: {
@@ -12,7 +12,7 @@
                     evntFunc: '&?'
                 },
                 template: '<div class="input-group inumeric">' +
-                    '<span class="input-group-addon"><ng-transclude></ng-transclude></span>' +
+                    '<span class="input-group-addon" ng-transclude></span>' +
                     '<input class="form-control"  ng-model="data">' +
                     '</div>',
                 link: function (scope, e, attrs, ngm) {
